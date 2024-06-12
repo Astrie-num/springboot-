@@ -31,12 +31,6 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String name, String email, LocalDate dob) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-    }
 
     public Student(String name, String email, LocalDate dob) {
         this.name = name;
