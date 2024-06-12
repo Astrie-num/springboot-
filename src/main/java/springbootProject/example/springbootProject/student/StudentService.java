@@ -2,9 +2,8 @@ package springbootProject.example.springbootProject.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.rmi.StubNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -25,11 +24,10 @@ public class StudentService {
 
     public void addStudent(Student student) {
 
-        System.out.println(student);
-    }
-
-    public void deleteStudent(Student student) {
-        studentRepository.delete(student);
-        System.out.println("Student deleted");
+        Optional<Student> optional = studentRepository.findStudentByEmail(student.getEmail());
+        if(optional.isPresent()) {
+            throw new IllegalStateException("Email taken already!");
+        }
+        studentRepository.save(student);
     }
 }

@@ -2,10 +2,6 @@ package springbootProject.example.springbootProject.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import springbootProject.example.springbootProject.student.StudentService;
-
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 
@@ -30,10 +26,5 @@ public class StudentController {
     @PostMapping
     public void addStudent(@RequestBody Student student){
          studentService.addStudent(student);
-    }
-
-    @DeleteMapping
-    public void deleteStudentById(Student student) {
-        studentService.deleteStudent(student);
     }
 }
