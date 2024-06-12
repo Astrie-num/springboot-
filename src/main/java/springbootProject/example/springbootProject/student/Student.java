@@ -17,7 +17,7 @@ public class Student {
     )
 
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = "student_sequence"
     )
     private int id;
